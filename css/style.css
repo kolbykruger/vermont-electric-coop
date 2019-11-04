@@ -1648,7 +1648,7 @@ input[type="submit"].button {
   color: #fff;
   position: relative;
   margin: 1em;
-  padding: 3em;
+  padding: 4em 3em;
   width: calc(33.333% - 2em);
   border-radius: 1em;
   overflow: hidden;
