@@ -7,6 +7,7 @@
     background: $color-grey-3;
     overflow: hidden;
     animation: menu-close-transform 0.6s ease-in-out forwards;
+    z-index: 2;
 
     body.navigation-open & {
         animation: menu-open-transform 0.6s ease-in-out forwards;
@@ -14,6 +15,24 @@
         .container {
             animation: menu-open-container-opacity 0.3s ease-in forwards 0.6s;
         }
+    }
+}
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.15);
+    opacity: 0;
+    z-index: -1;
+    cursor: pointer;
+    transition: 0.6s ease-in-out;
+
+    body.navigation-open & {
+        opacity: 1;
+        z-index: 1;
     }
 }
 

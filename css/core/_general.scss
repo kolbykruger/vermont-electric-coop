@@ -45,7 +45,7 @@ body {
 
 p {
     @include fs(16px);
-    @include fluid('font-size', 0.875rem, 1rem);
+    @include fluid('font-size', 1rem, 1.25rem);
     @include fluid('line-height', 1.4em, 1.6em);
     margin: 0 0 0.5em;
     font-weight: 400;
@@ -57,6 +57,7 @@ p:last-of-type {
 }
 
 a {
+    @include fluid('font-size', 1rem, 1.25rem);
     color: $color-1;
 }
 
@@ -88,6 +89,7 @@ h3 {
 
 ol,
 ul {
+    @include fluid('font-size', 1rem, 1.25rem);
     padding: 0 0 22px 30px;
     line-height: 1.6;
     overflow: hidden;
@@ -136,6 +138,7 @@ blockquote::after {
 }
 
 address {
+    @include fluid('font-size', 1rem, 1.25rem);
     font-style: normal;
 }
 

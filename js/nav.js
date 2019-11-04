@@ -1,4 +1,5 @@
 const navigation = document.querySelectorAll('nav button');
+const overlay = document.querySelector('.menu-overlay');
 
 navigation.forEach(function(element, index) {
 
@@ -8,6 +9,7 @@ navigation.forEach(function(element, index) {
 
         //Close Menu
         if(this.classList.contains('menu-open')) {
+            overlay.classList.remove('menu-open')
             navigation.forEach(function(item) {item.classList.remove('menu-open')})
             document.body.classList.remove('navigation-open')
             this.classList.remove('menu-open');
@@ -15,6 +17,7 @@ navigation.forEach(function(element, index) {
         }
 
         //Open Menu
+        overlay.classList.remove('menu-open')
         menus.forEach(function(menu) {menu.classList.remove('menu-open')})
         navigation.forEach(function(item) {item.classList.remove('menu-open')})
         menus[index].classList.add('menu-open')
@@ -23,3 +26,11 @@ navigation.forEach(function(element, index) {
 
     })
 });
+
+overlay.addEventListener('click', function() {
+    overlay.classList.remove('menu-open')
+    navigation.forEach(function(item) {item.classList.remove('menu-open')})
+    document.body.classList.remove('navigation-open')
+    this.classList.remove('menu-open');
+    return
+})
