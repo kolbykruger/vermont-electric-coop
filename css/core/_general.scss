@@ -36,9 +36,10 @@ html.wf-inactive {
 }
 
 body {
+    padding-top: 10em;
     color: $color-0;
     background: $color-grey-1;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     @include fs(16px);
 }
 
@@ -181,16 +182,28 @@ hr::before {
 }
 
 .reset {
-    -moz-appearance: none;
-    -webkit-appearance: none;
     appearance: none;
-    font-family: inherit;
-    font-size: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     color: inherit;
+    background: none;
     border: none;
     outline: none;
-    background: none;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
 }
+
+.visually-hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap; /* added line */
+}
+
 
 ::selection {
   background: $color-1;

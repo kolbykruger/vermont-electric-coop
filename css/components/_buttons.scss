@@ -8,7 +8,7 @@ $button-background: $color-1;
     justify-content: flex-start;
     flex-flow: row wrap;
     width: 100%;
-
+    margin-top: 1em;
 
     &-center {
         justify-content: center;
@@ -69,7 +69,13 @@ $button-background: $color-1;
     &-ghost {
         background: transparent;
         color: $button-background;
-        border: 1px solid $button-background;
+        border: 2px solid $button-background;
+
+        &:hover {
+            background: rgba(0,0,0,0.1);
+            border-color: $color-3;
+            color: $color-3;
+        }
     }
     &-secondary {
         color: inherit;
@@ -78,6 +84,17 @@ $button-background: $color-1;
     &-text {
         color: $color-1;
         background: transparent;
+    }
+
+    &-2 {
+        background: $color-2;
+    }
+    &-3 {
+        background: $color-3;
+    }
+
+    &-size-small {
+        padding: 0.5em 0.75em;
     }
 
     @media (max-width: 768px) {

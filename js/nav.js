@@ -1,31 +1,25 @@
-//Nav
-//$( ".nav > .drop_trigger, .mobile_nav > .drop_trigger" ).each(function(){$( this ).children('a:first').attr( "onclick", "return false" );});
+const navigation = document.querySelectorAll('nav button');
 
-$('.nav .drop_menu').each(function() {
-   if ($(this).find(".item").length >= 8) {
-       $(this).addClass('column_nav');
-   }
-});
+navigation.forEach(function(element, index) {
 
-var hoverTimeout;
-$('.nav .trigger').hover(function() {
-    clearTimeout(hoverTimeout);
-    $(this).addClass('open').find('.drop').attr('aria-hidden', 'true').attr('aria-expanded', 'false');
-    $('.trigger').not(this).removeClass("open");
-}, function() {
-    var $self=$(this);
-    hoverTimeout = setTimeout(function() {
-        $self.removeClass('open').find('.drop').attr('aria-hidden', 'true').attr('aria-expanded', 'false');
-    }, 250);
-});
+    const menus = document.querySelectorAll('.menu');
 
-$('.nav .trigger > a').focusin(function() {
-    var parent = $(this).parent();
-    parent.addClass('open').find('.drop').attr('aria-hidden','false').attr('aria-expanded', 'true');
-    $('.trigger').not(parent).removeClass("open");
-});
+    element.addEventListener('click', function( ) {
 
-$('.nav .drop a:last,.nav .drop input').focusout(function() {
-    var parent = $(this).parents().find('.trigger');
-    parent.removeClass('open').find('.drop').attr('aria-hidden','true').attr('aria-expanded', 'false');
+        //Close Menu
+        if(this.classList.contains('menu-open')) {
+            navigation.forEach(function(item) {item.classList.remove('menu-open')})
+            document.body.classList.remove('navigation-open')
+            this.classList.remove('menu-open');
+            return
+        }
+
+        //Open Menu
+        menus.forEach(function(menu) {menu.classList.remove('menu-open')})
+        navigation.forEach(function(item) {item.classList.remove('menu-open')})
+        menus[index].classList.add('menu-open')
+        document.body.classList.add('navigation-open')
+        this.classList.add('menu-open');
+
+    })
 });
