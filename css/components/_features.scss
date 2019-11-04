@@ -13,36 +13,70 @@
     }
 
     .item {
+        position: relative;
         text-decoration: none;
         display: block;
-        color: inherit;
+        color: #fff;
         position: relative;
         margin: 1em;
+        padding: 3em;
         width: calc(33.333% - 2em);
+        border-radius: 1em;
         overflow: hidden;
 
-        .info {
-            width: 100%;
-            padding: 1em 0;
-            text-align: center;
+        &:nth-of-type(1) {
+            background: $color-1;
+
+            .arrow {
+                color: $color-1;
+            }
+        }
+        &:nth-of-type(2) {
+            background: $color-3;
+
+            .arrow {
+                color: $color-3;
+            }
+        }
+        &:nth-of-type(3) {
+            background: $color-2;
+
+            .arrow {
+                color: $color-2;
+            }
         }
 
-        .title {
-
+        h2 {
+            color: #fff;
         }
 
-        .description {
-
+        .arrow {
+            position: absolute;
+            bottom: 1em;
+            right: 1em;
+            padding: 1em;
+            background: #fff;
+            border-radius: 50%;
+            width: 3em;
+            height: 3em;
+            //color: $color-1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translate(-1em, 0);
+            transition: $transition-1;
+            box-shadow: $box-shadow-1;
         }
 
-        &:hover .image {
-            opacity: 0.9;
+        &:hover,
+        &:focus {
+            .arrow {
+                opacity: 1;
+                transform: translate(0, 0);
+            }
         }
-    }
 
-    img {
-        width: 100%;
-        height: auto;
     }
 
 }
