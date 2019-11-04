@@ -1,0 +1,37 @@
+.slideshow {
+    margin: 1em auto;
+
+    .container {
+        display: none;
+        width: 100%;
+        height: auto;
+        user-select: none;
+        overflow: hidden;
+    }
+
+    .slick-initialized {
+        display: block;
+    }
+
+    .slide {
+        position: relative;
+
+        a {
+            text-decoration: none;
+            outline: none;
+        }
+
+        .caption {
+            padding: 1em;
+        }
+
+        > li:only-child {
+            display: none;
+        }
+    }
+
+    @media (max-width: 600px) {
+
+    }
+
+}

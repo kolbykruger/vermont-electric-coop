@@ -1,0 +1,38 @@
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+@mixin fluid($property, $min-font-size, $max-font-size) {
+    & {
+        $max-vw: 70rem;
+        $min-vw: 38rem;
+
+        #{$property}: $min-font-size;
+
+        @media screen and (min-width: $min-vw) {
+            #{$property}: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+        }
+        @media screen and (min-width: $max-vw) {
+            #{$property}: $max-font-size;
+        }
+    }
+}
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+@mixin fs($size) {
+  font-size: $size; //Fallback in px
+  font-size: calculateRem($size);
+}
+
+@mixin hocus {
+    &:hover, &:focus {
+        @content;
+    }
+}

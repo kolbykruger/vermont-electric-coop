@@ -1,0 +1,36 @@
+footer {
+    width: 100%;
+    background: $color-grey-2;
+    padding: 1em;
+    margin: 1em 0 0;
+
+    .container {
+        text-align: center;
+        color: $color-0;
+    }
+
+    a {
+        color: $color-0;
+    }
+
+    .address {
+        margin: 0 auto 5px;
+    }
+
+    .contact {
+        margin: 0 auto 5px;
+    }
+
+    .copyright {
+        margin: 0 auto 5px;
+    }
+
+    .ewd {
+        margin: 0 auto 5px;
+        width: 200px;
+
+        img {
+            width: 100%;
+        }
+    }
+}

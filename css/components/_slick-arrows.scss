@@ -1,0 +1,41 @@
+.slick-arrows .prev,
+.slick-arrows .next {
+    @include fs(30px);
+    user-select: none;
+    opacity: 0.2;
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    z-index: 100;
+    border: none;
+    padding: 8px 20px;
+    color: #fff;
+    transition: $transition-1;
+}
+
+.slick-arrows .prev {
+    left: 0;
+    text-shadow: 1px 0 1px #222;
+}
+
+.slick-arrows .next {
+    right: 0;
+    text-shadow: -1px 0 1px #222;
+}
+
+.slick-arrows:hover .next,
+.slick-arrows:hover .prev {
+    opacity: 1;
+}
+
+.slick-arrows .next:focus,
+.slick-arrows .prev:focus {
+    opacity: 1;
+    outline: none;
+}
+
+.slick-arrows .slick-dots > li:only-child {
+    display: none;
+}

@@ -1,0 +1,95 @@
+.nav {
+    text-align: center;
+    user-select: none;
+    z-index: 10;
+}
+
+.nav ul {
+    overflow: unset;
+    padding: 0;
+}
+
+.nav li {
+    position: relative;
+    display: block;
+}
+
+.nav a {
+    @include fs(16px);
+    display: block;
+    color: $color-0;
+    text-decoration: none;
+    transition: $transition-1;
+}
+
+.nav a:hover,
+.nav a:focus {
+    color: $color-1;
+}
+
+.nav li.open > a {
+    color: $color-1;
+}
+
+.nav a i {
+    @include fs(12px);
+    cursor: pointer;
+    margin: 0 0 0 6px;
+}
+
+.nav > ul {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.nav > ul > li {
+    margin: 0 0 0 32px;
+}
+
+.nav > ul li:last-child ul {
+    left: auto;
+    right: 0;
+    text-align: right;
+}
+
+.nav ul ul {
+    border-radius: 0.25em;
+    padding: 0;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: -9999px;
+    background: #fff;
+    white-space: nowrap;
+    min-width: 200px;
+    box-shadow: $box-shadow-2;
+    text-align: left;
+    transition: opacity 0.35s;
+    overflow: hidden;
+}
+
+.nav ul ul li {
+
+}
+
+.nav ul ul a {
+    @include fs(13px);
+    padding: 10px;
+    margin: 0;
+}
+
+.nav ul ul a:hover,
+.nav ul ul a:focus {
+    background: $color-grey-2;
+}
+
+.nav li.open ul {
+    top: calc(100% + 4px);
+    opacity: 1;
+    z-index: 10;
+}
+
+@media (max-width: 900px) {
+    .nav {display: none;}
+}

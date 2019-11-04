@@ -1,0 +1,48 @@
+.features {
+
+    .container {
+
+    }
+
+    .group {
+        margin: 0 -2em;
+
+        @media (max-width: 768px) {
+            margin: 0;
+        }
+    }
+
+    .item {
+        text-decoration: none;
+        display: block;
+        color: inherit;
+        position: relative;
+        margin: 1em;
+        width: calc(33.333% - 2em);
+        overflow: hidden;
+
+        .info {
+            width: 100%;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        .title {
+
+        }
+
+        .description {
+
+        }
+
+        &:hover .image {
+            opacity: 0.9;
+        }
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+}

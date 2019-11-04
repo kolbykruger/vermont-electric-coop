@@ -1,0 +1,203 @@
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+html[lang="en"] {
+    opacity: 0;
+}
+
+html.wf-active,
+html.wf-inactive {
+    opacity: 1;
+    transition: opacity 0.4s ease-out;
+}
+
+body {
+    color: $color-0;
+    background: $color-grey-1;
+    font-family: 'Open Sans', sans-serif;
+    @include fs(16px);
+}
+
+p {
+    @include fs(16px);
+    @include fluid('font-size', 0.875rem, 1rem);
+    @include fluid('line-height', 1.4em, 1.6em);
+    margin: 0 0 0.5em;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+p:last-of-type {
+    margin: 0;
+}
+
+a {
+    color: $color-1;
+}
+
+h1 {
+    @include fluid('font-size', 2.5rem, 3.5rem);
+    @include fluid('line-height', 1em, 1.2em);
+    font-weight: 600;
+}
+
+h2 {
+    @include fluid('font-size', 1.75rem, 2.5rem);
+    @include fluid('line-height', 1em, 1.2em);
+    font-weight: 600;
+}
+
+h3 {
+    @include fluid('font-size', 1.25rem, 1.75rem);
+    @include fluid('line-height', 1em, 1.2em);
+    font-weight: 600;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0 0 0.25em;
+    width: 100%;
+}
+
+ol,
+ul {
+    padding: 0 0 22px 30px;
+    line-height: 1.6;
+    overflow: hidden;
+}
+
+ul {
+    list-style: outside disc;
+
+}
+
+li {
+    position: relative;
+}
+
+blockquote {
+    position: relative;
+    max-width: 600px;
+    margin: 3em auto;
+    padding: 2rem;
+    background: $color-grey-2;
+    color: lighten($color-0, 15%);
+    font-style: italic;
+    text-align: center;
+    box-shadow: $box-shadow-1;
+}
+
+blockquote::before,
+blockquote::after {
+    color: $color-1;
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 900;
+    position: absolute;
+    @include fs(22px);
+}
+
+blockquote::before {
+    content: "\f10d";
+    left: 0.5em;
+    top: 0.5em;
+}
+
+blockquote::after {
+    content: "\f10e";
+    right: 0.5em;
+    bottom: 0.5em;
+}
+
+address {
+    font-style: normal;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+    border: none;
+}
+
+main {
+    min-height: 72vh;
+}
+
+article {
+
+}
+
+section {
+    margin: 3em auto;
+}
+
+.container {
+    width: 100%;
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.group {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+hr {
+    margin: 1em auto;
+    border: none;
+    text-align: center;
+    font-size: 1.75rem;
+}
+
+hr::before {
+    content: '.....';
+    letter-spacing: 0.6em;
+}
+
+.reset {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+::selection {
+  background: $color-1;
+  color: #fff;
+}
+
+::-moz-selection {
+  background: $color-1;
+  color: #fff;
+}

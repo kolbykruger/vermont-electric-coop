@@ -1,0 +1,44 @@
+.blog-bar {
+
+    .container {
+        background: #fff;
+        padding: 1em;
+    }
+
+    .group {
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    a {
+        padding: 0.5em;
+        color: inherit;
+        opacity: 0.75;
+        text-decoration: none;
+        transition: $transition-1;
+
+        &:hover,
+        &:focus {
+            opacity: 1;
+        }
+    }
+
+    a:first-of-type {
+        font-weight: 600;
+    }
+
+    a.active {
+        color: $color-1;
+    }
+
+    button {
+        padding: 0.5em;
+        outline: none;
+        background: none;
+        border: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        cursor: pointer;
+        transition: $transition-1;
+    }
+}
