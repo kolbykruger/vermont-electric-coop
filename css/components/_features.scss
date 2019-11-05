@@ -1,4 +1,29 @@
 .features {
+    position: relative;
+    background: $color-grey-2;
+    padding: 3em 0;
+    margin: 6em auto;
+
+    .decor {
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+
+        svg {
+            display: block;
+        }
+
+        rect {
+            fill: none;
+        }
+
+        path {
+            width: 100%;
+            fill: $color-grey-2;
+        }
+    }
 
     .container {
 
@@ -22,6 +47,7 @@
         padding: 4em 3em;
         width: calc(33.333% - 2em);
         border-radius: 1em;
+        transition: $transition-1;
         overflow: hidden;
 
         &:nth-of-type(1) {
@@ -71,6 +97,8 @@
 
         &:hover,
         &:focus {
+            box-shadow: $box-shadow-3;
+
             .arrow {
                 opacity: 1;
                 transform: translate(0, 0);
