@@ -1299,6 +1299,12 @@ body.menu-open .mobile_nav {
   margin-top: 0;
 }
 
+.section-heading {
+  max-width: 768px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 footer {
   width: 100%;
   background: #e7eff7;
@@ -2144,7 +2150,7 @@ input[type="submit"].button {
 
 .stats .value {
   line-height: 1.15;
-  color: #0082C8;
+  color: #FDBC38;
 }
 
 .stats .value {

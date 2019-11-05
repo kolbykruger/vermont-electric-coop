@@ -11,7 +11,7 @@
     .value {
         @include fluid('font-size', 2rem, 4rem);
         line-height: 1.15;
-        color: $color-1;
+        color: $color-3;
     }
 
     .label {
