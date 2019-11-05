@@ -24,35 +24,103 @@
     margin: 1em;
     background: #fff;
     transition: $transition-1;
-}
-
-.blog .cover {
-    margin: 0 auto;
+    border-radius: 1em;
+    box-shadow: $box-shadow-1;
     overflow: hidden;
-}
 
-.blog .cover img {
-    width: 100%;
-    transition: $transition-1;
-}
+    .cover {
+        margin: 0 auto;
+        overflow: hidden;
 
-.blog .caption {
-    display: none;
-}
+        img {
+            width: 100%;
+        }
+    }
 
-.blog .info {
-    padding: 1em;
-    text-align: center;
-}
+    .decor {
 
-.blog .title {
+        svg {
+            display: block;
+            position: absolute;
+            bottom: 100%;
+            right: -1px;
+            left: auto;
+            width: 100%;
+            height: auto;
+        }
 
-}
+        rect {
+            fill: none;
+        }
 
-.blog .summary {
-    @include fs(16px);
-    display: none;
-    padding-top: 1em;
+        path {
+            width: 100%;
+            fill: $color-2;
+            opacity: 0.8;
+        }
+
+        svg:last-of-type {
+            transform: rotateY(180deg);
+            bottom: calc(100% - 2px);
+            right: auto;
+            left: -1px;
+
+            path {
+                fill: #fff;
+                opacity: 1;
+            }
+        }
+    }
+
+    &:last-of-type {
+
+        .decor svg:first-of-type path {
+            fill: $color-1;
+        }
+    }
+
+    .info {
+        position: relative;
+        padding: 0.5em 1em;
+
+        .date {
+            position: absolute;
+            bottom: 100%;
+            left: 1em;
+            background: $color-3;
+            color: #fff;
+            padding: 0.35em 0.75em;
+            border-radius: 5em;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            margin-right: 0.75em;
+        }
+
+        .title {
+
+        }
+
+        .summary {
+            @include fs(16px);
+            display: none;
+            padding-top: 1em;
+        }
+
+        .buttons {
+            margin: 1em 0;
+        }
+
+        .button {
+            color: $color-2;
+        }
+    }
+
+    &:hover,
+    &:focus {
+        transform: translate(0, -0.5em);
+        box-shadow: $box-shadow-3;
+    }
+
 }
 
 /* First Blog */

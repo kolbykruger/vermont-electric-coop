@@ -23,6 +23,12 @@
             width: 100%;
             fill: $color-grey-2;
         }
+
+        &:last-of-type {
+            top: 100%;
+            bottom: auto;
+            transform: rotate(180deg);
+        }
     }
 
     .container {
