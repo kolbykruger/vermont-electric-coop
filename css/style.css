@@ -1904,6 +1904,7 @@ input[type="submit"].button {
 }
 
 .features .item:hover, .features .item:focus {
+  transform: translate(0, -0.25em);
   box-shadow: 0 7px 14px rgba(50, 50, 93, 0.11), 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 
@@ -2141,9 +2142,13 @@ input[type="submit"].button {
   text-align: center;
 }
 
+.stats .group {
+  justify-content: center;
+  margin: 1em auto;
+}
+
 .stats .stat-item {
-  flex: 1;
-  padding: 3em;
+  padding: 4em;
   text-align: center;
   border-radius: 1em;
 }

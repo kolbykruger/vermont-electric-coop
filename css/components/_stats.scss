@@ -1,9 +1,12 @@
 .stats {
 
+    .group {
+        justify-content: center;
+        margin: 1em auto;
+    }
 
     .stat-item {
-        flex: 1;
-        padding: 3em;
+        padding: 4em;
         text-align: center;
         border-radius: 1em;
     }

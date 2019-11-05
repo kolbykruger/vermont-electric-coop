@@ -103,6 +103,7 @@
 
         &:hover,
         &:focus {
+            transform: translate(0, -0.25em);
             box-shadow: $box-shadow-3;
 
             .arrow {
