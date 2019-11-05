@@ -1,4 +1,58 @@
 .hero {
     position: relative;
-    min-height: 90vh;
+
+    .group {
+        align-items: center;
+        justify-content: space-between;
+
+        > * {
+            flex: 1;
+            max-width: 550px;
+        }
+
+        .text {
+
+        }
+
+        .image {
+            border-radius: 0.25em;
+            overflow: hidden;
+        }
+    }
+
+    .buttons {
+        margin-top: 3em;
+    }
+
+    .news-snippet {
+        display: flex;
+        margin: 2em -0.5em;
+        padding: 0.5em;
+        text-decoration: none;
+        color: inherit;
+        border-radius: 5em;
+        transition: $transition-1;
+
+        .badge {
+            background: $color-2;
+            color: #fff;
+            padding: 0.35em 0.75em;
+            border-radius: 5em;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            margin-right: 0.75em;
+        }
+
+        span:not([class]) {
+            margin: 0 0.5em;
+            opacity: 0.5;
+        }
+
+        &:hover,
+        &:focus {
+            background: #fff;
+            box-shadow: $box-shadow-3;
+            transform: scale(1.05);
+        }
+    }
 }
