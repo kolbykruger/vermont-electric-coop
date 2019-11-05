@@ -5,13 +5,14 @@
     width: 100%;
     min-height: 60vh;
     background: $color-grey-3;
-    box-shadow: $box-shadow-3;
     overflow: hidden;
     animation: menu-close-transform 0.6s ease-in-out forwards;
+    transition: box-shadow 0.6s ease-in-out;
     z-index: 2;
 
     body.navigation-open & {
         animation: menu-open-transform 0.6s ease-in-out forwards;
+        box-shadow: $box-shadow-3;
 
         .container {
             animation: menu-open-container-opacity 0.3s ease-in forwards 0.6s;
