@@ -1,6 +1,6 @@
 .nav {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     text-align: center;
     user-select: none;
     z-index: 10;
@@ -17,7 +17,7 @@
 }
 
 .nav button {
-    @include fs(20px);
+    @include fs(18px);
     display: block;
     color: $color-0;
     text-decoration: none;
@@ -29,7 +29,7 @@
     outline: none;
     font-family: inherit;
     border-bottom: 2px solid transparent;
-    padding-bottom: 0.25em;
+    padding: 0.25em 0;
     cursor: pointer;
 
     body.navigation-open & {
@@ -39,7 +39,7 @@
     &.menu-open {
         border-color: #fff;
 
-        i {
+        i:not(.fa-search) {
             transform: rotateX(180deg)
         }
     }
@@ -54,11 +54,11 @@
     color: $color-1;
 }
 
-.nav button i {
+.nav button i:not(.fa-search) {
     @include fs(16px);
     cursor: pointer;
     margin-left: 0.25em;
-    opacity: 0.5;
+    opacity: 0.25;
     transition: $transition-1;
 }
 
