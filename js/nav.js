@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     menuOverlay.addEventListener('click', function() {
         //Close Menu
+        let elem = document.querySelector('.menu.menu-open');
         closeMenu(elem)
     })
 
