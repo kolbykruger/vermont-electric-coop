@@ -1,11 +1,9 @@
 const navigation = document.querySelectorAll('nav button');
 const overlay = document.querySelector('.menu-overlay');
-
-
+const menuContainer = document.querySelector('.menus')
 
 navigation.forEach(function(element, index) {
 
-    const menuContainer = document.querySelector('.menus')
     const menus = document.querySelectorAll('.menu');
     const actions = document.querySelectorAll('.menus a, .menus button');
 
@@ -69,10 +67,9 @@ overlay.addEventListener('click', function() {
     overlay.classList.remove('menu-open');
     navigation.forEach(function(item) {
         item.classList.remove('menu-open');
-        menuContainer.classList.add('menu-closing');
     })
     document.body.classList.remove('navigation-open');
     this.classList.remove('menu-open');
-    menuContainer.classList.remove('menu-closing');
+    menuContainer.classList.add('menu-closing');
     return
 })
