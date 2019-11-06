@@ -1,75 +1,91 @@
-const navigation = document.querySelectorAll('nav button');
-const overlay = document.querySelector('.menu-overlay');
-const menuContainer = document.querySelector('.menus')
-
-navigation.forEach(function(element, index) {
-
+document.addEventListener('DOMContentLoaded', function() {
+    const navigation = document.querySelectorAll('nav button');
+    const menuOverlay = document.querySelector('.menu-overlay');
+    const menuContainer = document.querySelector('.menus');
     const menus = document.querySelectorAll('.menu');
-    const actions = document.querySelectorAll('.menus a, .menus button');
+    const menuActions = document.querySelectorAll('.menus a, .menus button');
 
-    actions.forEach(function(action) {
-        action.setAttribute('tabindex', '-1');
+    for (let a = 0; a < menuActions.length; a++) {
+        menuActions[a].setAttribute('tabindex', '-1');
+    }
+
+    for (let i = 0; i < navigation.length; i++) {
+        navigation[i].addEventListener('click', function() {
+            var elem = this;
+
+            if(this.classList.contains('menu-open')) {
+                //Close Menu
+                closeMenu(elem)
+                return
+            }
+
+            //Open menu
+            openMenu(elem)
+
+        })
+    }
+
+    menuOverlay.addEventListener('click', function() {
+        //Close Menu
+        closeMenu(elem)
     })
 
-    element.addEventListener('click', function( ) {
+    function openMenu(elem) {
 
-        //Close Menu
-        if(this.classList.contains('menu-open')) {
-            overlay.classList.remove('menu-open');
-            menus.forEach(function(menu) {
-                menu.classList.remove('menu-open');
-                menu.setAttribute('aria-hidden', true);
-                menu.setAttribute('aria-expanded', false);
-                menu.setAttribute('tabindex', 0);
-            })
-            navigation.forEach(function(item) {
-                item.classList.remove('menu-open');
-            })
-            actions.forEach(function(action) {
-                action.setAttribute('tabindex', '-1');
-            })
-            document.body.classList.remove('navigation-open')
-            this.classList.remove('menu-open');
-            menuContainer.classList.add('menu-closing');
-            return
+        for (let m = 0; m < menus.length; m++) {
+            menus[m].classList.remove('menu-open');
+            menus[m].setAttribute('aria-hidden', true);
+            menus[m].setAttribute('aria-expanded', false);
+            menus[m].setAttribute('tabindex', 0);
         }
 
-        //Open Menu
-        overlay.classList.remove('menu-open')
-        menus.forEach(function(menu) {
-            menu.classList.remove('menu-open');
-            menu.setAttribute('aria-hidden', true);
-            menu.setAttribute('aria-expanded', false);
-            menu.setAttribute('tabindex', '-1');
-        })
-        navigation.forEach(function(item) {
-            item.classList.remove('menu-open');
-        })
-        actions.forEach(function(action) {
-            action.setAttribute('tabindex', '-1');
-        })
-        menus[index].classList.add('menu-open');
-        menus[index].setAttribute('aria-hidden', false);
-        menus[index].setAttribute('aria-expanded', true);
-        menus[index].setAttribute('tabindex', 0);
-        let menuActions = menus[index].querySelectorAll('a, button');
-        menuActions.forEach(function(action) {
-            action.setAttribute('tabindex', 0);
-        })
-        document.body.classList.add('navigation-open')
-        this.classList.add('menu-open');
+        for (let n = 0; n < navigation.length; n++) {
+            navigation[n].classList.remove('menu-open');
+        }
+
+        for (let a = 0; a < menuActions.length; a++) {
+            menuActions[a].setAttribute('tabindex', '-1');
+        }
+
         menuContainer.classList.remove('menu-closing');
+        document.body.classList.add('navigation-open');
+        menuOverlay.classList.add('menu-open');
+        elem.classList.add('menu-open');
 
-    })
-});
+        let selectedID = elem.dataset.pair;
+        let selectedMenu = menuContainer.querySelector('.menu[data-pair="'+selectedID+'"]');
+        let selectedMenuActions = selectedMenu.querySelectorAll('a, button');
 
-overlay.addEventListener('click', function() {
-    overlay.classList.remove('menu-open');
-    navigation.forEach(function(item) {
-        item.classList.remove('menu-open');
-    })
-    document.body.classList.remove('navigation-open');
-    this.classList.remove('menu-open');
-    menuContainer.classList.add('menu-closing');
-    return
+        selectedMenu.classList.add('menu-open');
+        selectedMenu.setAttribute('aria-hidden', false);
+        selectedMenu.setAttribute('aria-expanded', true);
+        selectedMenu.setAttribute('tabindex', 0);
+
+        for (let s = 0; s < selectedMenuActions.length; s++) {
+            selectedMenuActions[s].setAttribute('tabindex', 0);
+        }
+    }
+
+    function closeMenu(elem) {
+
+        for (let m = 0; m < menus.length; m++) {
+            menus[m].classList.add('menu-open');
+            menus[m].setAttribute('aria-hidden', true);
+            menus[m].setAttribute('aria-expanded', false);
+            menus[m].setAttribute('tabindex', 0);
+        }
+
+        for (let n = 0; n < navigation.length; n++) {
+            navigation[n].classList.remove('menu-open');
+        }
+
+        for (let a = 0; a < menuActions.length; a++) {
+            menuActions[a].setAttribute('tabindex', '-1');
+        }
+
+        menuContainer.classList.add('menu-closing');
+        document.body.classList.remove('navigation-open');
+        menuOverlay.classList.remove('menu-open');
+        elem.classList.remove('menu-open');
+    }
 })
