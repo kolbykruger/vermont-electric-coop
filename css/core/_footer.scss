@@ -1,33 +1,51 @@
 footer {
     width: 100%;
-    background: $color-grey-2;
-    padding: 1em;
-    margin: 1em 0 0;
+    background: $color-grey-3;
+    padding: 6em 1em 1em;
 
     .container {
-        text-align: center;
-        color: $color-0;
+        color: #fff;
+    }
+
+    .group {
+        justify-content: space-between;
+
+        &.copyline {
+            margin-top: 3em;
+        }
+    }
+
+    .section {
+        padding: 0 2em;
+    }
+
+    .logo {
+        max-width: 200px;
     }
 
     a {
-        color: $color-0;
+        color: #fff;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            color: $color-3;
+        }
     }
 
-    .address {
-        margin: 0 auto 5px;
+    ul {
+        list-style-type: none;
+        padding: 0;
     }
 
-    .contact {
-        margin: 0 auto 5px;
-    }
 
-    .copyright {
-        margin: 0 auto 5px;
-    }
 
     .ewd {
-        margin: 0 auto 5px;
         width: 200px;
+
+        svg {
+            width: 100%;
+        }
 
         img {
             width: 100%;

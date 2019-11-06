@@ -1,0 +1,35 @@
+.question {
+    background: $color-grey-2;
+    margin: 0 auto;
+    padding: 6em 0;
+
+    .group {
+        justify-content: center;
+    }
+
+    a {
+        display: inline-flex;
+        align-items: center;
+        background: #fff;
+        border-radius: 5em;
+        box-shadow: $box-shadow-3;
+        padding: 1em 1.5em;
+        text-decoration: none;
+        transition: $transition-1;
+
+        &:hover,
+        &:focus {
+            transform: translate(0, -0.5em);
+        }
+    }
+
+    .icon {
+        color: $color-3;
+        font-size: 2em;
+        margin-right: 0.5em;
+    }
+
+    h3 {
+        margin: 0;
+    }
+}

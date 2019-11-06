@@ -1,4 +1,9 @@
 .employees {
+    margin: 6em auto;
 
+    img {
+        border-radius: 1em;
+        box-shadow: $box-shadow-3;
+    }
 
 }

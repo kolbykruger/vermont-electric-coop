@@ -6,9 +6,13 @@
     min-height: 60vh;
     background: $color-grey-3;
     overflow: hidden;
-    animation: menu-close-transform 0.6s ease-in-out forwards;
+    transform: translate(0, -100%);
     transition: box-shadow 0.6s ease-in-out;
     z-index: 2;
+
+    &.menu-closing {
+        animation: menu-close-transform 0.6s ease-in-out forwards;
+    }
 
     body.navigation-open & {
         animation: menu-open-transform 0.6s ease-in-out forwards;
